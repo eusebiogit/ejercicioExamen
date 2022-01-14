@@ -21,14 +21,50 @@ public class EjercicioExamen {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
         Scanner sc = new Scanner(System.in);
+        System.out.println("Introduce filas");
+        int n = sc.nextInt();
+        System.out.println("Introduce Columnas");
+        int m = sc.nextInt();
+
+        int matriz[][] = new int[n][m];
+
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[0].length; j++) {
+                System.out.println("Introduce elemento " + i + " " + j);
+                matriz[i][j] = sc.nextInt();
+            }
+        }
+        System.out.println("Array");
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[0].length; j++) {
+                System.out.print(matriz[i][j] + " ");
+            }
+            System.out.println();
+        }
+        int vector[] = new int[matriz.length * matriz[0].length];
+        int posv = 0;
+
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[0].length; j++) {
+                if (matriz[i][j] % 7 == 0) {
+                    vector[posv++] = matriz[i][j];
+                }
+            }
+        }
+        for (int i = 0; i < vector.length; i++) {
+            System.out.print(vector[i] + " ");
+        }
+
+    }
+
+    private static void juego() {
 //        System.out.println("Introduce filas");
 //        int n = sc.nextInt();
 //        System.out.println("Introduce Columnas");
 //        int m = sc.nextInt();
 //        int jugadas = m;
-
+        Scanner sc = new Scanner(System.in);
         int n = 6;
         int m = 5;
         int mover;
